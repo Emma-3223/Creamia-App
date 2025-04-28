@@ -35,6 +35,9 @@
         display: flex;
         justify-content: space-between;
         gap: 5px;
+        @include sm{
+            flex-direction: column;
+        }
 
         input {
             border: none;

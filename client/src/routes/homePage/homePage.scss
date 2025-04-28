@@ -1,36 +1,63 @@
+@import '../../responsive.scss';
+
 .homePage {
     display: flex;
     height: 100vh;
 
     .textContainer {
         flex: 3;
-        p{
+
+        p {
             font-size: 20px;
-            font-family:sans-serif
+            font-family: sans-serif
         }
 
-        .wrapper{
+        .wrapper {
 
             height: 100%;
             padding-right: 300px;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           gap: 50px;
-           .title{
-            font-size: 34px;
-           }
-           .boxes{
             display: flex;
-            justify-content: space-between;
-           }
-           h1{
-            font-size: 36px;
-           }
-           h2{
-            font-size: 20px;
-            font-weight: 300;
-           }
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+
+            @include md {
+                padding: 0px;
+            }
+            @include sm {
+                margin-top: 20%;
+                justify-content: flex-start;
+            }
+
+            .title {
+                font-size: 64px;
+
+                @include lg {
+                    font-size: 45px;
+                }
+            }
+
+            .boxes {
+                display: flex;
+                justify-content: space-between;
+
+                @include sm {
+                    display: none;
+                }
+            }
+
+            h1 {
+                font-size: 36px;
+
+                @include lg {
+                    font-size: 32px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 300;
+            }
 
         }
     }
@@ -41,10 +68,21 @@
         align-items: center;
         background-color: #fcf5f3;
         position: relative;
-        img{
+
+        img {
             width: 115;
-            position:absolute;
+            position: absolute;
             right: 0;
+
+            @include lg {
+                // display: none;
+                width: 105%;
+            }
         }
+
+        @include md {
+            display: none;
+        }
+
     }
 }
